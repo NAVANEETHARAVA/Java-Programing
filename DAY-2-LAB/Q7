@@ -1,0 +1,37 @@
+interface SumInterface {
+    int sum(int a, int b);
+}
+
+interface AvgInterface {
+    double avg(int a, int b);
+}
+
+interface PercentageInterface {
+    double percentage(int total, int obtained);
+}
+
+class MultiOperations implements SumInterface, AvgInterface, PercentageInterface {
+    @Override
+    public int sum(int a, int b) {
+        return a + b;
+    }
+
+    @Override
+    public double avg(int a, int b) {
+        return (a + b) / 2.0;
+    }
+
+    @Override
+    public double percentage(int total, int obtained) {
+        return (obtained * 100.0) / total;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MultiOperations obj = new MultiOperations();
+        System.out.println("Sum: " + obj.sum(10, 20));
+        System.out.println("Average: " + obj.avg(10, 20));
+        System.out.println("Percentage: " + obj.percentage(100, 85));
+    }
+}
