@@ -1,0 +1,9 @@
+public class NumberFormatExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int num = Integer.parseInt("abc");
+        } catch (NumberFormatException e) {
+            System.out.println("Cannot parse non-numeric string to number.");
+        }
+    }
+}
