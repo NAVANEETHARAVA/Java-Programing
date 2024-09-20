@@ -1,0 +1,14 @@
+class FinalVariableExample {
+    final int maxValue = 100;
+
+    public void display() {
+        System.out.println("Final variable value: " + maxValue);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        FinalVariableExample obj = new FinalVariableExample();
+        obj.display();
+    }
+}
