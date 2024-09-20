@@ -1,0 +1,38 @@
+interface MathOperations {
+    void add();
+    void sub();
+    void mul();
+    void div();
+}
+
+class Calculator implements MathOperations {
+    @Override
+    public void add() {
+        System.out.println("Performing addition...");
+    }
+
+    @Override
+    public void sub() {
+        System.out.println("Performing subtraction...");
+    }
+
+    @Override
+    public void mul() {
+        System.out.println("Performing multiplication...");
+    }
+
+    @Override
+    public void div() {
+        System.out.println("Performing division...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        calc.add();
+        calc.sub();
+        calc.mul();
+        calc.div();
+    }
+}
