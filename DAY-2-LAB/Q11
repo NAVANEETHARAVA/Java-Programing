@@ -1,0 +1,18 @@
+class ThisExample {
+    int x;
+
+    public ThisExample(int x) {
+        this.x = x; // 'this' refers to the current instance variable
+    }
+
+    public void display() {
+        System.out.println("Value of x: " + this.x);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ThisExample obj = new ThisExample(10);
+        obj.display();
+    }
+}
