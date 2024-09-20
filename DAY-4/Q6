@@ -1,0 +1,39 @@
+interface ArithmeticOperations {
+    int add(int a, int b);
+    int sub(int a, int b);
+    int mul(int a, int b);
+    double div(int a, int b);
+}
+
+class ArithmeticImpl implements ArithmeticOperations {
+    @Override
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    @Override
+    public int sub(int a, int b) {
+        return a - b;
+    }
+
+    @Override
+    public int mul(int a, int b) {
+        return a * b;
+    }
+
+    @Override
+    public double div(int a, int b) {
+        if (b == 0) throw new ArithmeticException("Division by zero");
+        return (double) a / b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ArithmeticOperations op = new ArithmeticImpl();
+        System.out.println("Add: " + op.add(10, 5));
+        System.out.println("Subtract: " + op.sub(10, 5));
+        System.out.println("Multiply: " + op.mul(10, 5));
+        System.out.println("Divide: " + op.div(10, 5));
+    }
+}
