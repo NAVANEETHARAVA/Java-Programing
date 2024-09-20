@@ -1,0 +1,23 @@
+class NonIntegerException extends Exception {
+    public NonIntegerException(String message) {
+        super(message);
+    }
+}
+
+public class NonIntegerExceptionExample {
+    public static void main(String[] args) {
+        try {
+            validateInteger("abc");
+        } catch (NonIntegerException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void validateInteger(String input) throws NonIntegerException {
+        try {
+            Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            throw new NonIntegerException("Non-integer value entered.");
+        }
+    }
+}
