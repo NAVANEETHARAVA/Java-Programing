@@ -1,0 +1,38 @@
+interface Sum {
+    int sum(int a, int b);
+}
+
+interface Avg {
+    double avg(int[] numbers);
+}
+
+interface Percentage {
+    double percentage(int obtained, int total);
+}
+
+class MathOperations implements Sum, Avg, Percentage {
+    @Override
+    public int sum(int a, int b) {
+        return a + b;
+    }
+
+    @Override
+    public double avg(int[] numbers) {
+        int total = Arrays.stream(numbers).sum();
+        return (double) total / numbers.length;
+    }
+
+    @Override
+    public double percentage(int obtained, int total) {
+        return (obtained / (double) total) * 100;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MathOperations mo = new MathOperations();
+        System.out.println("Sum: " + mo.sum(10, 20));
+        System.out.println("Average: " + mo.avg(new int[]{10, 20, 30}));
+        System.out.println("Percentage: " + mo.percentage(80, 100));
+    }
+}
