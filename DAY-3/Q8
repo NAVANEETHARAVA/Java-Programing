@@ -1,0 +1,13 @@
+class ThrowsExample {
+    public static void main(String[] args) {
+        try {
+            validateInput(null);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void validateInput(String input) throws IllegalArgumentException {
+        if (input == null) throw new IllegalArgumentException("Null input passed.");
+    }
+}
