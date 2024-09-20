@@ -1,0 +1,21 @@
+class InvalidDecimalException extends Exception {
+    public InvalidDecimalException(String message) {
+        super(message);
+    }
+}
+
+public class DecimalExceptionExample {
+    public static void main(String[] args) {
+        try {
+            validateDecimal("12,34");
+        } catch (InvalidDecimalException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void validateDecimal(String decimal) throws InvalidDecimalException {
+        if (!decimal.matches("\\d+(\\.\\d+)?")) {
+            throw new InvalidDecimalException("Invalid decimal number.");
+        }
+    }
+}
