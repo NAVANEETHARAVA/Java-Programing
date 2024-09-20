@@ -1,0 +1,16 @@
+enum Day { MONDAY, TUESDAY }
+
+public class EnumArgumentExample {
+    public static void main(String[] args) {
+        try {
+            printDay(null);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid enum constant passed.");
+        }
+    }
+
+    public static void printDay(Day day) {
+        if (day == null) throw new IllegalArgumentException("Invalid day.");
+        System.out.println(day);
+    }
+}
