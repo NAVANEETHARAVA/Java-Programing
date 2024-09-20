@@ -1,0 +1,48 @@
+interface Tree {
+    void fruits(int count);
+    void leaves(int count, String type);
+    void flowers(int count, String color, String season);
+}
+
+class Branch1 implements Tree {
+    @Override
+    public void fruits(int count) {
+        System.out.println("Branch1 produces " + count + " fruits.");
+    }
+
+    @Override
+    public void leaves(int count, String type) {
+        System.out.println("Branch1 has " + count + " " + type + " leaves.");
+    }
+
+    @Override
+    public void flowers(int count, String color, String season) {
+        System.out.println("Branch1 has " + count + " " + color + " flowers in " + season + ".");
+    }
+}
+
+class Branch2 implements Tree {
+    @Override
+    public void fruits(int count) {
+        System.out.println("Branch2 produces " + count + " fruits.");
+    }
+
+    @Override
+    public void leaves(int count, String type) {
+        System.out.println("Branch2 has " + count + " " + type + " leaves.");
+    }
+
+    @Override
+    public void flowers(int count, String color, String season) {
+        System.out.println("Branch2 has " + count + " " + color + " flowers in " + season + ".");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Tree branch1 = new Branch1();
+        Tree branch2 = new Branch2();
+
+        branch1.fruits(5);
+        branch1.leaves(20, "green");
+        branch1.flowers(10, "red", "
