@@ -1,0 +1,21 @@
+class StaticVariableExample {
+    static int count = 0;
+
+    public StaticVariableExample() {
+        count++;
+    }
+
+    public void displayCount() {
+        System.out.println("Count is: " + count);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        new StaticVariableExample();
+        new StaticVariableExample();
+        new StaticVariableExample();
+        StaticVariableExample obj = new StaticVariableExample();
+        obj.displayCount();
+    }
+}
