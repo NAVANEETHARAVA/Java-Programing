@@ -1,0 +1,32 @@
+abstract class R192211772 {
+    
+    public abstract void eat();
+    
+    public abstract void sleep();
+}
+
+class Dog extends R192211772 {
+    
+    @Override
+    public void eat() {
+        System.out.println("Dog is eating.");
+    }
+    
+    @Override
+    public void sleep() {
+        System.out.println("Dog is sleeping.");
+    }
+}
+
+class Cat extends R192211772 {
+    
+    @Override
+    public void eat() {
+        System.out.println("Cat is eating.");
+    }
+    
+    @Override
+    public void sleep() {
+        System.out.println("Cat is sleeping.");
+    }
+}
